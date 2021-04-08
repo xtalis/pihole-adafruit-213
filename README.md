@@ -1,6 +1,8 @@
 # pihole-adafruit-213
 Displays Pihole info on a AdaFruit 2.13" EInk screen
 
+!(https://github.com/xtalis/pihole-adafruit-213/blob/main/stats.py.png?raw=true | width=100)
+
 ### Preparing for use ###
 Assuming you are starting with a bare Raspian install, you will need to run the following commands.
 This will install Python3, Adafruit CircuitPythonEPD and some font and imaging library.
