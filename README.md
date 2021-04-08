@@ -1,7 +1,7 @@
 # pihole-adafruit-213
 Displays Pihole info on a AdaFruit 2.13" EInk screen
 
-<img src="https://github.com/xtalis/pihole-adafruit-213/blob/main/stats.py.png?raw=true" width="150">
+<img src="https://github.com/xtalis/pihole-adafruit-213/blob/main/stats.py.png?raw=true" width="250">
 
 ### Preparing for use ###
 Assuming you are starting with a bare Raspian install, you will need to run the following commands.
