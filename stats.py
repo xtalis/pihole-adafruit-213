@@ -8,7 +8,7 @@ import json
 from adafruit_epd.epd import Adafruit_EPD
 from PIL import Image, ImageDraw, ImageFont
 
- 
+#setup the pins for I/O 
 spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 ecs = digitalio.DigitalInOut(board.CE0)
 dc = digitalio.DigitalInOut(board.D22)
@@ -16,12 +16,15 @@ rst = digitalio.DigitalInOut(board.D27)
 busy = digitalio.DigitalInOut(board.D17)
 srcs = None
 
+#font definitions
 large_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 20)
 large_font_italic = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-BoldOblique.ttf", 20)
 small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 10)
 
+#api url. you could probably change this if you wanted to monitor a remote Pihole
 api_url = 'http://localhost/admin/api.php'
 
+#locations for screen drawing
 height = 122
 width = 250
 x = width - 250 #0?!
@@ -32,15 +35,17 @@ from adafruit_epd.ssd1675 import Adafruit_SSD1675
 display = Adafruit_SSD1675(122, 250, spi, cs_pin=ecs, dc_pin=dc, sramcs_pin=srcs,rst_pin=rst, busy_pin=busy)
 display.rotation = 3
 
+#clear the screen
 display.fill(Adafruit_EPD.WHITE)
- 
+
+#duh, its two colors, but you can mess with this if you have a tricolor display
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 image = Image.new("RGB", (250, 122), color=WHITE)
 draw = ImageDraw.Draw(image)
 
-
+#dig out the info for the stats
 cmd = "hostname -I | cut -d\' \' -f1 | tr -d \'\\n\'"
 IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
 cmd = "hostname | tr -d \'\\n\'"
@@ -57,7 +62,7 @@ Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
 cmd = "date | cut -d \' \' -f5"
 DATER = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
-
+#hit up the api for some numbers
 try:
         r = requests.get(api_url)
         data = json.loads(r.text)
@@ -75,6 +80,7 @@ except KeyError:
 
 STATUS = str("{:,}".format(BLOCKDOMAINS)) + " on blacklist."
 
+#layout the display
 draw.text(  (x,                 y),     "[" + HOST + "]",       font=large_font_italic,fill=BLACK)
 draw.text(  ((width / 2) - 28,  y),     IP + '  |  ' + DATER,   font=small_font, fill=BLACK)
 draw.text(  ((width / 2) - 28,  y+12),  STATUS,                 font=small_font, fill=BLACK)
@@ -95,6 +101,6 @@ draw.text(  ((width/2) - 25,    y+78),   str(QUERYCACHE),       font=large_font,
 draw.text(  (x,                 y+96),   "forward",             font=large_font, fill=BLACK)
 draw.text(  ((width/2) - 25,    y+96),   str(QUERYFWD),         font=large_font, fill=BLACK)
 
-
+#update the display
 display.image(image)
 display.display()
