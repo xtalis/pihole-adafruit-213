@@ -19,6 +19,8 @@ sudo apt-get install ttf-dejavu
 sudo apt-get install python3-pil
 ```
 
+Of course also install [Pi-Hole](https://pi-hole.net/)
+
 ### Usage ###
 
 `python3 stats.py`
