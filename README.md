@@ -32,3 +32,7 @@ If you change the .py script to be executable, you can add a cron job.
 `10 *    * * *   root    /home/pi/stats.py`
 
 ...this will run at 10 minutes past each hour.
+
+
+### License ###
+Licensed under [GLWTPL](https://github.com/me-shaon/GLWTPL/)
