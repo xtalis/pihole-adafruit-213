@@ -21,12 +21,14 @@ sudo apt-get install python3-pil
 
 `python3 stats.py`
 
+#### Cron ####
+
 If you change the .py script to be executable, you can add a cron job.
 
 `chmod a+x stats.py`
 
-and add this line to /etc/crontab ('sudo pico /etc/crontab')
+...and add this line to /etc/crontab ('sudo pico /etc/crontab')...
 
 `10 *    * * *   root    /home/pi/stats.py`
 
-This will run at 10 minutes past each hour.
+...this will run at 10 minutes past each hour.
