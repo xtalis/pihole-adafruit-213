@@ -7,7 +7,9 @@ This will install Python3, Adafruit CircuitPythonEPD and some font and imaging l
 
 `
 sudo apt update & sudo apt upgrade -y
+
 sudo apt install python3-pip
+
 sudo pip3 install --upgrade setuptools
 sudo pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
