@@ -14,7 +14,8 @@ sudo python3 raspi-blinka.py
 sudo pip3 install adafruit-circuitpython-epd
 wget https://github.com/adafruit/Adafruit_CircuitPython_framebuf/raw/master/examples/font5x8.bin
 sudo apt-get install ttf-dejavu
-sudo apt-get install python3-pil```
+sudo apt-get install python3-pil
+```
 
 ### Usage ###
 
