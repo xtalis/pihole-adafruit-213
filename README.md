@@ -5,20 +5,16 @@ Displays Pihole info on a AdaFruit 2.13" EInk screen
 Assuming you are starting with a bare Raspian install, you will need to run the following commands.
 This will install Python3, Adafruit CircuitPythonEPD and some font and imaging library.
 
-`
-sudo apt update & sudo apt upgrade -y
-
-sudo apt install python3-pip
-
-sudo pip3 install --upgrade setuptools
-sudo pip3 install --upgrade adafruit-python-shell
-wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
-sudo python3 raspi-blinka.py
-sudo pip3 install adafruit-circuitpython-epd
-wget https://github.com/adafruit/Adafruit_CircuitPython_framebuf/raw/master/examples/font5x8.bin
-sudo apt-get install ttf-dejavu
-sudo apt-get install python3-pil
-`
+`sudo apt update & sudo apt upgrade -y`
+`sudo apt install python3-pip`
+`sudo pip3 install --upgrade setuptools`
+`sudo pip3 install --upgrade adafruit-python-shell`
+`wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py`
+`sudo python3 raspi-blinka.py`
+`sudo pip3 install adafruit-circuitpython-epd`
+`wget https://github.com/adafruit/Adafruit_CircuitPython_framebuf/raw/master/examples/font5x8.bin`
+`sudo apt-get install ttf-dejavu`
+`sudo apt-get install python3-pil`
 
 ### Usage ###
 
