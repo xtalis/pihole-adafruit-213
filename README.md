@@ -48,7 +48,9 @@ chmod a+x stats.py
 
 ...and add this line to /etc/crontab ('sudo pico /etc/crontab')...
 
-`10 *    * * *   root    /home/pi/stats.py`
+```bash
+10 *    * * *   root    /home/pi/stats.py
+```
 
 ...this will run at 10 minutes past each hour.
 
