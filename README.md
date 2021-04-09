@@ -7,7 +7,7 @@ Displays Pihole info on a AdaFruit 2.13" EInk screen
 Assuming you are starting with a bare Raspian install, you will need to run the following commands.
 This will install Python3, Adafruit CircuitPythonEPD and some font and imaging library.
 
-```
+```bash
 sudo su
 apt update & apt upgrade -y
 apt install python3-pip
