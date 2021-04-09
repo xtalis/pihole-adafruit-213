@@ -1,5 +1,5 @@
 # pihole-adafruit-213
-Displays Pihole info on a AdaFruit 2.13" EInk screen
+Displays Pihole info and stats on a [AdaFruit 2.13" EInk screen](https://www.adafruit.com/product/4687)
 
 <img src="https://github.com/xtalis/pihole-adafruit-213/blob/main/stats.py.png?raw=true" width="250">
 
@@ -22,25 +22,29 @@ apt-get install python3-pil
 ```
 
 Of course also install [Pi-Hole](https://pi-hole.net/)
-```
+```bash
 curl -sSL https://install.pi-hole.net | bash
 ```
 
 or
 
-```
+```bash
 wget -O basic-install.sh https://install.pi-hole.net
 sudo bash basic-install.sh
 ```
 ### Usage ###
 
-`python3 stats.py`
+```bash
+python3 stats.py
+```
 
 #### Cron ####
 
 If you change the .py script to be executable, you can add a cron job.
 
-`chmod a+x stats.py`
+```bash
+chmod a+x stats.py
+```
 
 ...and add this line to /etc/crontab ('sudo pico /etc/crontab')...
 
